@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>访问本机摄像头</title>
+</head>
+<body>
+  <video id="player" controls autoplay></video>
+  <button id="open">开启摄像头</button>
+  <button id="capture">抓拍</button>
+  <button id="cancel">取消抓拍</button>
+  <button id="close">关闭摄像头</button>
+  <canvas id="snapshot" width=320 height=240></canvas>
+<script>
+var player = document.getElementById('player');
+var snapshotCanvas = document.getElementById("snapshot");
+var open = document.getElementById('open');
+var capture = document.getElementById("capture");
+var cancel = document.getElementById('cancel');
+var close = document.getElementById('close');
+var videoTracks;
+var timer = null;
+var handleSuccess = function(stream) {
+  player.srcObject = stream;
+  videoTracks = stream.getVideoTracks();
+};
+capture.addEventListener('click', function() {
+  var context = snapshotCanvas.getContext('2d');
+  timer = setInterval(function() {
+    context.drawImage(player, 0, 0, snapshotCanvas.width, snapshotCanvas.height);
+  }, 1000);
+});
+cancel.onclick = function() {
+  clearInterval(timer);
+}
+close.onclick = function() {
+  videoTracks.forEach(function(track) {track.stop()});
+}
+open.onclick = function() {
+  navigator.mediaDevices.getUserMedia({video: true}).then(handleSuccess);
+};
+</script>
+</body>
+</html>
