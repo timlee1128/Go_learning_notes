@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Word Cloud</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="./css/home.css">
+</head>
+<body>
+  <div id="header">
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">词云搜索</a>
+        </div>
+          <form class="navbar-form navbar-left">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Search">
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+          </form>
+      </div>
+    </nav>
+  </div>
+  <div id="main" class="container">
+    <div class="col-lg-6">
+      <div id="left" class="col-lg-12">
+        <h4>思念是一把刀</h4>
+        <p>歌手: <span id="singer">刘辰希</span></p>
+        <p>所属专辑: <span id="record">思念是一把刀</span></p>
+        <p id="lrc">
+          春天化作黄叶远去
+          我还守在原地寸步不离
+          都说爱情是一场游戏
+          我盼望结果是喜剧
+          傍晚默默的望着天际
+          脑海里播放甜蜜回忆
+          爱上你恋上这座城市
+          人海里第一眼就认出你
+
+          思念是一把刀刀刀锋利
+          受伤的心血流不止
+        </p>
+        <p>歌手介绍: <span id="singer_info">adlfjaldjflajdfljfldajsfljsd</span></p>
+        <p>专辑介绍: <span id="record_info">adlfjaldjflajdfljfldajsfljsd</span></p>
+        <p>歌单介绍: <span id="list_info">adlfjaldjflajdfljfldajsfljsd</span></p>
+        <div>
+          翻唱列表:
+          <ol id="cover_list">
+            <li>aaaaaaaaaa</li>
+            <li>aaaaaaaaaa</li>
+            <li>aaaaaaaaaa</li>
+            <li>aaaaaaaaaa</li>
+            <li>aaaaaaaaaa</li>
+          </ol>
+        </div>
+        <div>
+          排行榜列表:
+          <ol id="cover_list">
+            <li>aaaaaaaaaa</li>
+            <li>aaaaaaaaaa</li>
+            <li>aaaaaaaaaa</li>
+            <li>aaaaaaaaaa</li>
+            <li>aaaaaaaaaa</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+    <div id="right" class="col-lg-6"></div>
+  </div>
+<!-- <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script> -->
+<script src="./src/wordcloud2.js"></script>
+<script src="./home.js"></script>
+</body>
+</html>

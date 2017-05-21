@@ -1,0 +1,20 @@
+html {font-size: 100px;}
+body{background-color: #fafafa;}
+body,h1,h2,h3,h4,h5,h6,p,ul,ol,dl,dd,form,input {margin: 0;}
+ul,ol,th,td,input,select,option,textarea {padding: 0;}
+body,input,h1,h2,h3,h4,h5,h6 {font-size: 0.12rem; font-family: "Microsoft Yahei";}
+h1,h2,h3,h4,h5,h6,th {font-weight: normal;}
+ul,dl {list-style: none;}
+i {font-style: normal;}
+a {text-decoration: none; color: #adadad;}
+img {border: none; vertical-align: top;}
+table {border-collapse: collapse;}
+input,textarea {outline: none;}
+textarea {resize: none; overflow: auto;}
+em {font-style: normal; color: red;}
+select {appearance: none; -moz-appearance: none; -webkit-appearance: none;}
+select::-ms-expand {display: none;}
+
+/* common css */
+.fl {float: left;}
+.fr {float: right;}
