@@ -1,0 +1,44 @@
+/*
+* 文本显示框
+* song: 歌名
+* singer: 歌手
+* record: 专辑
+* lrc: 歌词
+* singer_info: 歌手信息
+* record_info: 专辑信息
+* song_list_info: 歌单信息
+* cover_list: 翻唱列表
+* ranking_list: 排行榜
+*/
+{
+  "song": "Happy New Year",
+  "singer": "Michael",
+  "record": "Happy",
+  "lrc": "Happy New Year, Happy New Year, Happy New Year",
+  "singer_info": "Born on 1945....",
+  "record_info": "For nothing",
+  "song_list_info": "unknown",
+  "cover_list": [
+    "aaaa",
+    "bbbb",
+    "cccc",
+    {"singer": "", "other": ""} //如果列表中的信息不是纯文本, 可能需要字典或者列表进一步说明
+  ],
+  "ranking_list": [
+    "aaaa",
+    "bbbb",
+    "cccc",
+    {"singer": "", "other": ""} //同上
+  ]
+}
+
+/*
+* 词云
+* foo -> 代表 name
+* 12 -> 代表 权重
+*/
+
+[
+  ["foo", 12],
+  ["bar", 6]
+]

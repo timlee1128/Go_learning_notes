@@ -1,0 +1,45 @@
+基于可视化词云的歌曲智能搜索系统说明文档
+
+(1) 页面布局
+  页面布局依赖于 Bootstrap, 总体上成上下结构. 上结构主要是
+展示标题和搜索栏, 下结构成左右列, 左列展示歌名, 歌手, 歌词, 专辑,
+相关歌单等相关信息, 右列展示搜索结果词云图.
+
+(2) 词云图
+  词云图基于 wordCloud2.js 库, 它可以在 canvas 2D 或者 HTML 标签上展示词云效果.
+
+  1. 基本用法
+    在 Web Page 中加载 wordcloud2.js 脚本, 然后运行:
+        WordCloud(elements, options);
+
+    elements 是 canvas 元素, 也可以是 DOM 元素所组成的数组, 如果传入的参数是 canvas 元素, 
+  词云图将会在 canvas 中生成一张图片; 如果是其他的 DOM 元素, 那么词云图将会在这个 DOM 元素
+  中填充 span 标签.
+    options 是词云图的配置项, 可以根据具体的需要来设置.
+
+  2. options 配置
+    options 是普通的 JavaScript 对象, 以下是可选的配置属性:
+  
+    A. 描述
+      list: 一个二维数组, 由将要在 canvas 上展示的词文组成, 类似于"[['foo', 12], ['bar', 6]]".
+      fontFamily: 有使用的字体.
+      fontWeight: 字体粗细
+      color: 字体颜色
+      classes: 在 DOM 元素而非 canvas 元素上, 可以为生成的 span 应用特定的 class.
+      minSize: 在 canvas 上可以应用的最小字体.
+      weightFactor: 字体权重的扩大比例
+      clearCanvas: 使用特定背景颜色填充 canvas, 并在这之前清空画布
+      backgroundColor: 背景颜色<F11>
+    B. 尺寸
+      gridSize: 像素为单位的网格尺寸, 网格尺寸越大, 每个单词之间的间距越大.
+      origin: 词云图的绘制起点, 用 [x, y] 表示.
+      drawOutOfBound: 布尔值, 为 true 时允许绘制的字词部分超出 canvas.
+    C. 模板
+      drawMask: 可视化的网格, 用来限定云图的填充区域.
+      maskColor: 模板颜色
+      maskGapWidth: 模板网格间距
+    D. 时间线
+      wait: 在下一个关键字渲染之前应该等待的毫秒数.
+      abortThreshold: 中断时间, 程序超出该时间就终止执行.
+      abort: 
+
