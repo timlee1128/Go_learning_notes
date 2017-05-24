@@ -28,6 +28,12 @@ var eReset = document.getElementById('reset'),
   eCoverList = document.getElementById('cover_list'),
   eRankingList = document.getElementById('ranking_list');
 
+// 滚动条定制
+$('#left').mCustomScrollbar({
+  theme: "dark",
+  autoHideScrollbar: true
+});
+
 // 页面初次加载需要初始化
 render(srchType);
 // 当点击 reset 按钮时, 再次初始化
