@@ -1,0 +1,72 @@
+基于可视化词云的歌曲智能搜索系统说明文档
+
+(1) 页面布局
+  页面布局基于 Bootstrap 的栅格布局, 总体上成上下结构. 上结构主要是
+展示标题和搜索栏, 下结构成左右列, 左列展示歌名, 歌手, 歌词, 专辑,
+相关歌单等相关信息, 右列展示搜索结果词云图.
+
+(2) 词云图
+  词云图基于 wordCloud2.js 库, 它可以在 canvas 2D 或者 HTML 标签上展示词云效果.
+
+  1. 基本用法
+    在 Web Page 中加载 wordcloud2.js 脚本, 然后运行:
+        WordCloud(elements, options);
+
+    elements 是 canvas 元素, 也可以是 DOM 元素所组成的数组, 如果传入的参数是 canvas 元素, 
+  词云图将会在 canvas 中生成一张图片; 如果是其他的 DOM 元素, 那么词云图将会在这个 DOM 元素
+  中填充 span 标签.
+    options 是词云图的配置项, 可以根据具体的需要来设置.
+
+  2. options 配置
+    options 是普通的 JavaScript 对象, 以下是可选的配置属性:
+  
+    A. 基础
+      list: 一个二维数组, 由将要在 canvas 上展示的词文组成, 类似于"[['foo', 12], ['bar', 6]]".
+      fontFamily: 有使用的字体.
+      fontWeight: 字体粗细
+      color: 字体颜色
+      classes: 在 DOM 元素而非 canvas 元素上, 可以为生成的 span 应用特定的 class.
+      minSize: 在 canvas 上可以应用的最小字体.
+      weightFactor: 字体权重的扩大比例
+      clearCanvas: 使用特定背景颜色填充 canvas, 并在这之前清空画布
+      backgroundColor: 背景颜色<F11>
+    B. 尺寸
+      gridSize: 像素为单位的网格尺寸, 网格尺寸越大, 每个单词之间的间距越大.
+      origin: 词云图的绘制起点, 用 [x, y] 表示.
+      drawOutOfBound: 布尔值, 为 true 时允许绘制的字词部分超出 canvas.
+    C. 模板
+      drawMask: 可视化的网格, 用来限定云图的填充区域.
+      maskColor: 模板颜色
+      maskGapWidth: 模板网格间距
+    D. 时间线
+      wait: 在下一个关键字渲染之前应该等待的毫秒数.
+      abortThreshold: 中断时间, 程序超出该时间就终止执行.
+      abort: 终止渲染之后的回调程序.
+    E. 旋转
+      minRotation: 关键字最小的旋转角度, 以 rad 为单位.
+      maxRotation: 关键字最大的旋转角度, 以 rad 为单位.
+      rotationSteps: 强制使用固定的角度.
+    F. 随机性
+      shuffle: 随机绘制点数, 因此每一次的绘制结果都不太一样.
+      rotateRatio: 关键字旋转的概率, 设置为 1 时始终旋转.
+    E. 形状
+      shape: 词云的形状. 可以是回调函数形式的极坐标方程, 或者是关键字.
+            可用的关键字包括: circle(默认), cardioid(苹果或心脏型曲线),
+            diamond(别名square), triangle-forward, triangle(别名 triangle-
+            upright, pentagon, star).
+      (通过https://timdream.org/wordcloud2.js/shape-generator.html, 可以把简单的图形转为极坐标函数)
+      ellipticity: 词云绘制的平整度.
+    F. 交互
+      交互特性仅能够在 canvas 词云上使用.
+      hover: 当光标移入或移出一个关键词时调用的回调函数, 回调函数的形式是
+            callback(item, dimension, event), 其中 event 代表原始的 mousemove
+            事件.
+      click: 当关键词被点击时调用的回调函数, 回调函数的形式是 callback(item,
+            dimension, event), 其中 event 代表原始的点击事件.
+    E. 事件
+      在 canvas 云图绘制的生命周期中, 定义了一些钩子, 分别是以下四种:
+        ① wordcloudstart
+        ② wordclouddrawn
+        ③ wordcloudstop
+        ④ wordcloudabort
+

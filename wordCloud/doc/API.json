@@ -1,0 +1,83 @@
+/*
+* 文本显示框
+* song: 歌名
+* singer: 歌手
+* lrc: 歌词
+* singer_info: 歌手介绍
+* singer_album_list: 该歌手的全部专辑列表
+* record: 专辑名/所属专辑
+* record_info: 专辑信息
+* album_song_list: 该专辑下的歌曲列表
+* song_list_info: 歌单介绍
+* song_list: 该歌单下的歌曲列表
+* cover_list: 翻唱列表
+* toplist: 排行榜名
+* toplist_list: 该排行榜下的歌曲列表
+*
+*/
+
+result2 = {
+  "song": "Happy New Year",
+  
+  "singer": "Michael",
+  
+  "lrc": "Happy New Year, Happy New Year, Happy New Year",
+  
+  "singer_info": "Born on 1945....",
+  
+  "singer_album_list":[
+    "aaaa",
+    "bbbb",
+    "cccc",
+    {"singer": "", "other": ""} //如果列表中的信息不是纯文本, 可能需要字典或者列表进一步说明
+  ],
+  
+  "record": "Happy",
+  
+  "record_info":  [
+  "For nothing", //歌手
+  "For nothing", //发行时间
+  "For nothing", //发行公司
+  ],
+  
+  "album_song_list":[
+    "aaaa",
+    "bbbb",
+    "cccc",
+    {"singer": "", "other": ""} //如果列表中的信息不是纯文本, 可能需要字典或者列表进一步说明
+  ],
+  
+  "song_list_info": "unknown", 
+  
+  "song_list":[
+    "aaaa",
+    "bbbb",
+    "cccc",
+    {"singer": "", "other": ""} //如果列表中的信息不是纯文本, 可能需要字典或者列表进一步说明
+  ],
+  
+  "cover_list": [
+    "aaaa",
+    "bbbb",
+    "cccc",
+    {"singer": "", "other": ""} //如果列表中的信息不是纯文本, 可能需要字典或者列表进一步说明
+  ],
+  
+  "toplist": "云音乐电音榜",
+  
+  "toplist_list": [
+    "aaaa",
+    "bbbb",
+    "cccc",
+    {"singer": "", "other": ""} //同上
+  ]
+}
+
+/*
+* 词云
+* num -> 代表 关键词的个数
+* foo -> 代表 name
+* 12  -> 代表 权重
+*/
+
+result1 = [num,["foo", 12],["bar", 6]...,["bin", 8]]
